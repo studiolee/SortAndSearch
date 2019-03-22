@@ -1,7 +1,5 @@
 package search;
 
-import java.util.Random;
-
 /**
  * @author leeray
  * @version 创建时间：2019年3月22日 下午7:05:39 <br>
@@ -11,18 +9,16 @@ import java.util.Random;
 public class BinayTreeSearch {
 	public static void main(String[] args) {
 		int[] a = new int[5];
-		for (int i = 0; i < a.length; i++) {
-			a[i] = new Random().nextInt(10);
-		}
+		a[0] = 10;
+		a[1] = 5;
+		a[2] = 20;
+		a[3] = 15;
+		a[4] = 3;
 
-		for (int i = 0; i < a.length; i++) {
-			System.out.print(a[i] + "/");
-		}
+		Binode root = Binode.CreateBST(a, a.length);
 
-		Binode root = new Binode();
+		System.out.println(root);
 
-		root = Binode.CreateBST(a, a.length - 1);
-
-		System.out.println(Binode.SearchBST(root,5));
+		System.out.println(Binode.SearchBST(root, 5));
 	}
 }

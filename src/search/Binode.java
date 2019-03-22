@@ -20,7 +20,7 @@ public class Binode {
 		this.lchild = lchild;
 		this.rchild = rchild;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Binode [data=" + data + ", lchild=" + lchild + ", rchild=" + rchild + "]";
@@ -34,19 +34,18 @@ public class Binode {
 	 * @return：返回目标值的节点
 	 */
 	static Binode SearchBST(Binode root, int k) {
-		if (root == null) {
+		if (root == null)
 			return null;// 二叉查找树为空，返回null
-		} else if (k == root.data) {
+		else if (k == root.data)
 			// 查找成功
 			return root;
-		} else if (k < root.data) {
+		else if (k < root.data)
 			// 在左子树里找
-			SearchBST(root.lchild, k);
-		} else {
+			return SearchBST(root.lchild, k);
+		else
 			// 在右子树里查找
-			SearchBST(root.rchild, k);
-		}
-		return null;
+			return SearchBST(root.rchild, k);
+		
 	}
 
 	/**
@@ -62,14 +61,14 @@ public class Binode {
 			root.data = data;
 			root.lchild = null;
 			root.rchild = null;
-			return root;//这里注意要return 我之前忘了导致stack内存溢出
+			return root;// 这里注意要return 我之前忘了导致stack内存溢出
 		}
 		if (data <= root.data) {
 			// 在左子树里插入
 			root.lchild = InsertBST(root.lchild, data);
 		} else {
 			// 在右子树里插入
-			root.lchild = InsertBST(root.rchild, data);
+			root.rchild = InsertBST(root.rchild, data);
 		}
 		return root;
 	}
@@ -82,8 +81,8 @@ public class Binode {
 	 */
 	static Binode CreateBST(int a[], int n) {
 		Binode root = null;
-		for(int i = 0;i < n;i++){
-			 root = InsertBST(root, a[i]);
+		for (int i = 0; i < n; i++) {
+			root = InsertBST(root, a[i]);
 		}
 		return root;
 	}
