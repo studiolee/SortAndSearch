@@ -5,16 +5,16 @@ package search;
  * @version 创建时间：2019年3月22日 下午7:09:28 <br>
  *          描述：二叉树节点结构<br>
  */
-public class Binode {
+public class BiNode {
 	int data;// 节点值
-	Binode lchild, rchild;// 左右孩子
+	BiNode lchild, rchild;// 左右孩子
 
-	public Binode() {
+	public BiNode() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Binode(int data, Binode lchild, Binode rchild) {
+	public BiNode(int data, BiNode lchild, BiNode rchild) {
 		super();
 		this.data = data;
 		this.lchild = lchild;
@@ -33,7 +33,7 @@ public class Binode {
 	 * @param k：目标值
 	 * @return：返回目标值的节点
 	 */
-	static Binode SearchBST(Binode root, int k) {
+	static BiNode SearchBST(BiNode root, int k) {
 		if (root == null)
 			return null;// 二叉查找树为空，返回null
 		else if (k == root.data)
@@ -54,10 +54,10 @@ public class Binode {
 	 * @param data：要插入的数据
 	 * @return：返回插入了数据的二叉查找树的根节点
 	 */
-	static Binode InsertBST(Binode root, int data) {
+	static BiNode InsertBST(BiNode root, int data) {
 		// 如果root为空
 		if (root == null) {
-			root = new Binode();
+			root = new BiNode();
 			root.data = data;
 			root.lchild = null;
 			root.rchild = null;
@@ -79,8 +79,8 @@ public class Binode {
 	 * @param n：数组大小
 	 * @return：返回该数组的对应的二叉查找树的根节点
 	 */
-	static Binode CreateBST(int a[], int n) {
-		Binode root = null;
+	static BiNode CreateBST(int a[], int n) {
+		BiNode root = null;
 		for (int i = 0; i < n; i++) {
 			root = InsertBST(root, a[i]);
 		}

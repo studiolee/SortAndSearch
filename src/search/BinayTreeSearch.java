@@ -15,10 +15,10 @@ public class BinayTreeSearch {
 		a[3] = 15;
 		a[4] = 3;
 
-		Binode root = Binode.CreateBST(a, a.length);
+		BiNode root = BiNode.CreateBST(a, a.length);
 
 		System.out.println(root);
 
-		System.out.println(Binode.SearchBST(root, 5));
+		System.out.println(BiNode.SearchBST(root, 5));
 	}
 }
